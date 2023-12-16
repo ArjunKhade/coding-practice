@@ -33,6 +33,7 @@ public class ArrayExample {
 
 	static fing(){
 		System.out.println("Hello");
+		System.out.println("dadfcd");
 	}
 
 }
