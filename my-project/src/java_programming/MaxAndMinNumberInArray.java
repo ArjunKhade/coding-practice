@@ -1,0 +1,29 @@
+package java_programming;
+
+public class MaxAndMinNumberInArray {
+    public static void main(String[] args) {
+		
+    	
+    	int [] arr = {50,20,60,70,80,90};
+    	
+    	int max=arr[0];
+    	
+    	int min=arr[0];
+    	
+    	
+    	for (int i = 0; i < arr.length; i++) {
+			if(arr[i]>max) {
+				max=arr[i];
+			}
+			
+			if(arr[i]<min) {
+				min = arr[i];
+			}
+			
+		}
+    	
+    	System.out.println("MAX:"+max+" MIN:"+min);
+    	
+    	
+	}
+}

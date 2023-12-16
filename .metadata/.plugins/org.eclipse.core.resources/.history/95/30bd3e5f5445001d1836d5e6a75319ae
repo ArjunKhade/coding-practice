@@ -1,0 +1,26 @@
+package java_programming;
+
+public class RemoveJunkSpecialChar {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String s = "45@#*/arjun 0123456789 ";
+		
+		s=s.replaceAll("[^a-zA-Z0-9]", "");
+		
+		System.out.println(s);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

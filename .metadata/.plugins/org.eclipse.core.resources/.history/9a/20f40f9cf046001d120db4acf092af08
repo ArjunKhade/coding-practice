@@ -1,0 +1,159 @@
+package dsa;
+
+public class DoublyLinkList {
+	Node head=null;
+	Node tail=null;
+	int size = 0;
+
+	
+	public Node addAtStart(int data) {
+		Node newNode = new Node(data);
+		  if(size == 0) {
+			  head=newNode;
+			  tail=newNode;
+		  }else {
+			  newNode.next=head;
+			  head.prev=newNode;
+			  head=newNode;
+		  }
+		
+		  size++;
+		return newNode;
+	}
+	
+	public Node addAtEnd(int data) {
+		Node newNode = new Node(data);
+		if(size==0) {
+			head=newNode;
+			tail=newNode;
+		}else {
+			tail.next=newNode;
+			newNode.prev=tail;
+			tail=newNode;
+		}
+		size++;
+		return newNode;
+	}
+	
+	public void deleteFromStart() {
+		if(size==0) {
+			System.out.println("List is Empty!!!");
+		}else {
+			head=head.next;
+			size--;
+		}
+	}
+	
+	public void deleteFromEnd() {
+		if(size==0) {
+			System.err.println("List is Empty!!");
+		}
+		else if(size == 1) {
+			deleteFromStart();
+		}else {
+
+			Node prevTail = tail.prev;
+			tail=prevTail;
+			tail.next=null;
+			
+			size--;
+			
+		}
+		
+	}
+	
+	
+	public int elementAt(int index) {
+		if(index > size) {
+			return -1;
+		}
+		Node curr = head;
+		while(index-1!=0) {
+			curr = curr.next;
+			index--;
+		}
+		return curr.data;
+	}
+	
+	public int getSize() {
+		return size;
+	}
+	
+	
+	public void display() {
+		Node curr = head;
+		while(curr!=null) {
+			System.out.println(" "+curr.data);
+			curr=curr.next;
+		}
+	}
+	
+	public Node addAfter(int data , Node prevNode) {
+		
+		if(prevNode == null) {
+			return null;
+		}
+		else if(prevNode == tail) {
+			return addAtEnd(data);
+		}
+		else {
+			Node newNode = new Node(data);
+			Node nextNode = prevNode.next;
+			
+			newNode.next=nextNode;
+			prevNode.next=newNode;
+			nextNode.prev=newNode;
+			newNode.prev=prevNode;
+			
+			size++;
+			
+			return newNode;
+		}
+	}
+	
+	
+	
+	class Node {
+		int data;
+		Node prev;
+		Node next;
+
+		public Node(int data) {
+
+			this.data = data;
+			this.prev = null;
+			this.next = null;
+		}
+
+	}
+
+	public static void main(String[] args) {
+		
+		DoublyLinkList dl = new DoublyLinkList();
+		
+		Node x = dl.addAtStart(1);
+		             dl.addAtStart(2);
+		
+		dl.display();
+		
+	dl.addAtEnd(3);
+//		dl.display();
+//		 dl.addAfter(4,x);
+//		 dl.display();
+//		 dl.deleteFromStart();
+//		 dl.display();
+//		 System.out.print("Element at index 2: "+dl.elementAt(2));
+//		 dl.addAtStart(1);
+//		 dl.display();
+//		 dl.deleteFromEnd();
+//		 dl.display();
+//		 System.out.println("Size of the Linked List: " + dl.getSize());
+		
+		
+		
+		
+		
+
+	}
+
+}

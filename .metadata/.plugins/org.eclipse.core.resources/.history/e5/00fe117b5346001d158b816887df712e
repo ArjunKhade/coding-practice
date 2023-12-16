@@ -1,0 +1,31 @@
+package dsa;
+
+public class SinglyLinkedList {
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	public static void main(String[] args) {
+		
+	
+		
+
+	}
+	
+	class Node{
+		 int data;
+		Node next;
+	}
+
+}
